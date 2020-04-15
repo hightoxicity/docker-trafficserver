@@ -58,5 +58,7 @@ RUN set -x \
 
 RUN chown trafficserver:trafficserver /var/trafficserver
 
+RUN tar cvzf /home/trafficserver/default-ats-config.tar.gz /etc/trafficserver
+
 ENTRYPOINT ["dumb-init"]
 CMD ["traffic_cop", "--stdout"]
